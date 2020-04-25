@@ -15,7 +15,7 @@ function install_macos {
     return
   fi
   echo "MacOS detected"
-  #xcode-select --install
+  xcode-select --install
 
   if [ "$(is_installed brew)" == "0" ]; then
     echo "Installing Homebrew"
@@ -31,6 +31,11 @@ function install_macos {
   if [ "$(is_installed zsh)" == "0" ]; then
     echo "Installing zsh"
     brew install zsh zsh-completions
+  fi
+
+  if [ "$(is_installed z)" == "0" ]; then
+    echo "Installing z"
+    brew install z
   fi
 
   if [ "$(is_installed tmux)" == "0" ]; then
@@ -65,8 +70,11 @@ function link_dotfiles {
   ln -s $(pwd)/zshrc ~/.zshrc
   ln -s $(pwd)/tmux.conf ~/.tmux.conf
 
-  echo "Installing oh-my-zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  if [ ! -d "$ZSH" ]; then
+    echo "Installing oh-my-zsh"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    ln -s $(pwd)/schemes/dracula.zsh-theme "$ZSH/themes"
+  fi
 
   if [ ! -d "$ZSH/custom/plugins/zsh-autosuggestions" ]; then
     echo "Installing zsh-autosuggestions"
