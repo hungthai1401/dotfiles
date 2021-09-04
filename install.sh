@@ -67,13 +67,14 @@ function backup {
 function link_dotfiles {
   echo "Linking dotfiles"
   mv ~/.zshrc ~/.zshrc.backup
-  ln -s $(pwd)/zshrc ~/.zshrc
-  ln -s $(pwd)/tmux.conf ~/.tmux.conf
+  ln -s $(pwd)/zsh/zshrc ~/.zshrc
+  ln -s $(pwd)/tmux/tmux.conf ~/.tmux.conf
+  ln -s ${pwd}/git/.gitconfig ~/.gitconfig
 
   if [ ! -d "$ZSH" ]; then
     echo "Installing oh-my-zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    ln -s $(pwd)/schemes/dracula.zsh-theme "$ZSH/themes"
+    ln -s $(pwd)/zsh/dracula.zsh-theme "$ZSH/themes"
   fi
 
   if [ ! -d "$ZSH/custom/plugins/zsh-autosuggestions" ]; then
