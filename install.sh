@@ -1,111 +1,38 @@
-#!/bin/bash
+#!/bin/sh
 
-# Utils
-function is_installed {
-  # set to 1 initially
-  local return_=1
-  # set to 0 if not found
-  type $1 >/dev/null 2>&1 || { local return_=0;  }
-  # return
-  echo "$return_"
-}
+echo "Setting up your Mac..."
 
-function install_macos {
-  if [[ $OSTYPE != darwin* ]]; then
-    return
-  fi
-  echo "MacOS detected"
-  xcode-select --install
+# Check for Oh My Zsh and install if we don't have it
+if test ! $(which omz); then
+  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+fi
 
-  if [ "$(is_installed brew)" == "0" ]; then
-    echo "Installing Homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
+# Check for Homebrew and install if we don't have it
+if test ! $(which brew); then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  if [ $TERM_PROGRAM != "iTerm.app" ]; then
-    echo "Installing iTerm2"
-    brew tap caskroom/cask
-    brew cask install iterm2
-  fi
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-  if [ "$(is_installed zsh)" == "0" ]; then
-    echo "Installing zsh"
-    brew install zsh zsh-completions
-  fi
+# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
+rm -rf $HOME/.zshrc
+ln -sw $(pwd)/zsh/.zshrc $HOME/.zshrc
+ln -sw $(pwd)/zsh/dracula.zsh-theme "$ZSH/themes"
 
-  if [ "$(is_installed z)" == "0" ]; then
-    echo "Installing z"
-    brew install z
-  fi
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/$ZSH/custom}/plugins/zsh-autosuggestions
 
-  if [ "$(is_installed tmux)" == "0" ]; then
-    echo "Installing tmux"
-    brew install tmux
-    echo "Installing reattach-to-user-namespace"
-    brew install reattach-to-user-namespace
-    echo "Installing tmux-plugin-manager"
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  fi
+# Update Homebrew recipes
+brew update
 
-  if [ "$(is_installed git)" == "0" ]; then
-    echo "Installing Git"
-    brew install git
-  fi
-}
+# Install all our dependencies with bundle (See Brewfile)
+brew tap homebrew/bundle
+brew bundle --file ./Brewfile
 
-function backup {
-  echo "Backing up dotfiles"
-  local current_date=$(date +%s)
-  local backup_dir=dotfiles_$current_date
+# Symlink the Mackup config file to the home directory
+ln -s $(pwd)/.mackup.cfg $HOME/.mackup.cfg
+# Symlink the Mackup directory to the home directory
+ln -s $(pwd)/mackup $HOME/.mackup
 
-  mkdir ~/$backup_dir
-
-  mv ~/.zshrc ~/$backup_dir/.zshrc
-  mv ~/.tmux.conf ~/$backup_dir/.tmux.conf
-}
-
-function link_dotfiles {
-  echo "Linking dotfiles"
-  mv ~/.zshrc ~/.zshrc.backup
-  ln -s $(pwd)/zsh/zshrc ~/.zshrc
-  ln -s $(pwd)/tmux/tmux.conf ~/.tmux.conf
-  ln -s ${pwd}/git/.gitconfig ~/.gitconfig
-
-  if [ ! -d "$ZSH" ]; then
-    echo "Installing oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    ln -s $(pwd)/zsh/dracula.zsh-theme "$ZSH/themes"
-  fi
-
-  if [ ! -d "$ZSH/custom/plugins/zsh-autosuggestions" ]; then
-    echo "Installing zsh-autosuggestions"
-    git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
-  fi
-}
-
-while test $# -gt 0; do 
-  case "$1" in
-    --help)
-      echo "Help"
-      exit
-      ;;
-    --macos)
-      install_macos
-      backup
-      link_dotfiles
-      zsh
-      source ~/.zshrc
-      exit
-      ;;
-    --backup)
-      backup
-      exit
-      ;;
-    --dotfiles)
-      link_dotfiles
-      exit
-      ;;
-  esac
-
-  shift
-done
+# Set macOS preferences - we will run this last because this will reload the shell
+source ./.macos

@@ -1,5 +1,5 @@
 [user]
-    name = Thai Nguyen Hung
-    email = hungthai1401.it@gmail.com
+	name = Thai Nguyen Hung
+	email = hungthai1401.it@gmail.com
 [core]
     sshCommand = "ssh -i ~/.ssh/id_rsa"
