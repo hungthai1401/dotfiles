@@ -5,6 +5,7 @@ tap "homebrew/services"
 tap "nicoverbruggen/cask"
 tap "shivammathur/extensions"
 tap "shivammathur/php"
+tap "nicoverbruggen/homebrew-cask"
 
 # Binaries
 brew "fzf"
@@ -20,5 +21,5 @@ brew "shivammathur/php/php@8.1"
 
 # Apps
 cask "another-redis-desktop-manager"
-cask "hashicorp-vagrant"
 cask "iterm2"
+cask "phpmon"
