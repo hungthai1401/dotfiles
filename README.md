@@ -4,7 +4,7 @@ A set of `zsh`, and `tmux` configuration files for Developer on macOS.
 ## Setting up your Mac
 1. Clone onto your machine:
 ```bash
-git clone --recursive git://github.com/hungthai1401/dotfiles.git
+git clone --recursive git://github.com/hungthai1401/dotfiles.git ~/.dotfiles
 ```
 2. Run the installation with (maybe you  must run `chmod +x ./fresh.sh` before run that file):
 ```bash
