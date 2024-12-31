@@ -29,6 +29,12 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
+# Removes .tmux.conf from $HOME (if it exists) and symlinks the .tmux.conf file from the .dotfiles
+rm -rf $HOME/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+rm -rf $HOME/.tmux.conf
+ln -s $(pwd)/tmux/.tmux.conf $HOME/.tmux.conf
+
 # Symlink the Mackup config file to the home directory
 ln -s $(pwd)/.mackup.cfg $HOME/.mackup.cfg
 # Symlink the Mackup directory to the home directory
