@@ -18,7 +18,8 @@ fi
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
 ln -s $(pwd)/zsh/.zshrc $HOME/.zshrc
-ln -s $(pwd)/zsh/dracula.zsh-theme "$ZSH/themes"
+ln -s $(pwd)/zsh/dracula.zsh-theme $ZSH/themes
+ln -s $(pwd)/zsh/aliases.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/aliases.zsh
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/$ZSH/custom}/plugins/zsh-autosuggestions
 
