@@ -19,8 +19,10 @@ brew "zsh-syntax-highlighting"
 brew "shivammathur/php/php@8.1"
 brew "shivammathur/extensions/xdebug@8.1"
 brew "tmux"
+brew "brotherbui/homebrew/sapp"
 
 # Apps
 cask "another-redis-desktop-manager"
 cask "iterm2"
 cask "phpmon"
+cask "itsycal"
