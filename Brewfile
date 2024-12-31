@@ -6,6 +6,7 @@ tap "nicoverbruggen/cask"
 tap "shivammathur/extensions"
 tap "shivammathur/php"
 tap "nicoverbruggen/homebrew-cask"
+tap "brotherbui/homebrew"
 
 # Binaries
 brew "fzf"
@@ -26,3 +27,4 @@ cask "another-redis-desktop-manager"
 cask "iterm2"
 cask "phpmon"
 cask "itsycal"
+cask "bruno"

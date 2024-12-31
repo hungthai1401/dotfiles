@@ -30,6 +30,12 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
+# Force link PHP 8.1
+brew link --overwrite --force shivammathur/php/php@8.1
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # Removes .tmux.conf from $HOME (if it exists) and symlinks the .tmux.conf file from the .dotfiles
 rm -rf $HOME/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
