@@ -18,6 +18,7 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "shivammathur/php/php@8.1"
 brew "shivammathur/extensions/xdebug@8.1"
+brew "tmux"
 
 # Apps
 cask "another-redis-desktop-manager"
