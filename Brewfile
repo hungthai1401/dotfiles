@@ -21,6 +21,7 @@ brew "shivammathur/php/php@8.1"
 brew "shivammathur/extensions/xdebug@8.1"
 brew "tmux"
 brew "brotherbui/homebrew/sapp"
+brew "composer"
 
 # Apps
 cask "another-redis-desktop-manager"
@@ -29,3 +30,4 @@ cask "phpmon"
 cask "itsycal"
 cask "bruno"
 cask "bitwarden"
+cask "fork"
