@@ -3,3 +3,7 @@
     email = hungthai1401.it@gmail.com
 [core]
     sshCommand = "ssh -i ~/.ssh/id_rsa"
+    excludesfile = ~/.config/git/ignore
+    hookspath = ~/.config/git/hooks
+[includeIf "hasconfig:remote.*.url:git@gitlab.ggg.com.vn:*/**"]
+    path = ~/.config/git/config-gitlab.ggg.com.vn

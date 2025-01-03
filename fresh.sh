@@ -37,7 +37,11 @@ brew bundle --file ./Brewfile
 brew link --overwrite --force shivammathur/php/php@8.1
 
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+$(brew --prefix)/opt/fzf/install
+
+# Install Delve - a debugger for the Go programming language
+# See: https://github.com/go-delve/delve
+go install github.com/go-delve/delve/cmd/dlv@latest
 
 # Removes .tmux.conf from $HOME (if it exists) and symlinks the .tmux.conf file from the .dotfiles
 rm -rf $HOME/.tmux/plugins/tpm
@@ -49,6 +53,15 @@ ln -s $(pwd)/tmux/.tmux.conf $HOME/.tmux.conf
 ln -s $(pwd)/.mackup.cfg $HOME/.mackup.cfg
 # Symlink the Mackup directory to the home directory
 ln -s $(pwd)/mackup $HOME/.mackup
+
+# Symlink git config files
+rm -rf ~/.gitconfig
+rm -rf ~/.config/git/ignore
+rm -rf ~/.config/git/hooks
+mkdir -p ~/.config/git
+ln -s $(pwd)/git/.gitconfig ~/.gitconfig
+ln -s $(pwd)/git/ignore ~/.config/git/ignore
+ln -s $(pwd)/git/hooks ~/.config/git/hooks
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source ./.macos

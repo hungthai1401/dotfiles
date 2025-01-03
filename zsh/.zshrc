@@ -49,7 +49,7 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions z zsh-vi-mode)
+plugins=(git zsh-autosuggestions z fzf zsh-vi-mode)
 
 # User configuration
 
@@ -73,7 +73,7 @@ export LANG=en_US.UTF-8
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='nvim'
+#export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -89,11 +89,11 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="nvim"
-alias reload='source ~/.zshrc'
+#alias vim="nvim"
+#alias reload='source ~/.zshrc'
 
-alias gsync="git checkout master && git fetch upstream && git rebase upstream/master && git push"
-alias glog='git log --graph --oneline --decorate --all'
+#alias gsync="git checkout master && git fetch upstream && git rebase upstream/master && git push"
+#alias glog='git log --graph --oneline --decorate --all'
 
 export PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[pink]%}%D{%T}%{$reset_color%} [$(whoami)] %{$fg_bold[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
 
@@ -101,4 +101,7 @@ export PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[pink]%}%D{%T}%{$reset_co
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
+zvm_after_init_commands+=('[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh')
