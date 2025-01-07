@@ -2,6 +2,17 @@
 
 echo "Setting up your Mac..."
 
+# Check for Xcode Command Line Tools and install if we don't have it
+if ! xcode-select -p &>/dev/null; then
+    echo "Installing Xcode Command Line Tools..."
+    xcode-select --install
+    # Wait until the installation is done
+    until xcode-select -p &>/dev/null; do
+        sleep 5
+    done
+    echo "Xcode Command Line Tools installation complete!"
+fi
+
 # Check for Oh My Zsh and install if we don't have it
 if test ! $(which omz); then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
