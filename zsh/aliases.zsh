@@ -19,3 +19,7 @@ alias wip="commit wip"
 
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
+
+# tmux
+alias ta="tmux attach -t"
+alias td="tmux detach"
