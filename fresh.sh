@@ -75,5 +75,8 @@ ln -s $(pwd)/git/.gitconfig ~/.gitconfig
 ln -s $(pwd)/git/ignore ~/.config/git/ignore
 ln -s $(pwd)/git/hooks ~/.config/git/hooks
 
+# find the installers and run them iteratively
+#find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+
 # Set macOS preferences - we will run this last because this will reload the shell
 source ./.macos
