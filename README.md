@@ -18,5 +18,3 @@ cd ~/.dotfiles && ./fresh.sh
 - https://pragprog.com/titles/bhtmux2/tmux-2/
 - https://github.com/driesvints/dotfiles
 - https://github.com/holman/dotfiles
-
-
