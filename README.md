@@ -14,6 +14,9 @@ cd ~/.dotfiles && ./fresh.sh
 4. Restart your computer to finalize the process
 
 ## Thanks To...
-https://github.com/dracula/dracula-theme/
+- https://github.com/dracula/dracula-theme/
+- https://pragprog.com/titles/bhtmux2/tmux-2/
+- https://github.com/driesvints/dotfiles
+- https://github.com/holman/dotfiles
 
 
