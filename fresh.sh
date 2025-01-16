@@ -75,6 +75,9 @@ ln -s $(pwd)/git/.gitconfig ~/.gitconfig
 ln -s $(pwd)/git/ignore ~/.config/git/ignore
 ln -s $(pwd)/git/hooks ~/.config/git/hooks
 
+# Symlink AeroSpace config file
+ln -s $(pwd)/aerospace/.aerospace.toml $HOME/.aerospace.toml
+
 # Inspired by https://github.com/holman/dotfiles
 # find the installers and run them iteratively
 #find . -name install.sh | while read installer ; do sh -c "${installer}" ; done

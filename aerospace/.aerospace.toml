@@ -120,7 +120,7 @@ alt-9 = 'workspace 9'
 alt-b = 'workspace B' # Browsers
 alt-c = 'workspace C' # Chat apps
 alt-d = 'workspace D' # Development
-alt-m = 'workspace M' # Mail
+alt-e = 'workspace E' # English
 alt-n = 'workspace N' # Notes
 alt-p = 'workspace P' # Productivity
 alt-t = 'workspace T' # Terminal
@@ -139,7 +139,7 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
 alt-shift-d = 'move-node-to-workspace D'
-alt-shift-m = 'move-node-to-workspace M'
+alt-shift-e = 'move-node-to-workspace E'
 alt-shift-n = 'move-node-to-workspace N'
 alt-shift-p = 'move-node-to-workspace P'
 alt-shift-t = 'move-node-to-workspace T'
@@ -207,11 +207,25 @@ run = 'move-node-to-workspace D'
 if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace B'
 
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace B'
+
 # Productivity
 
 [[on-window-detected]]
-if.app-id = 'md.obsidian'
+if.app-id = 'com.DanPristupov.Fork'
 run = 'move-node-to-workspace P'
+
+# Note
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace N'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iBooksX'
+run = 'move-node-to-workspace N'
 
 ## Floaters
 
