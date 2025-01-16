@@ -1,3 +1,12 @@
+# reload zsh config
+alias reload!="source $HOME/.zshrc"
+
+# Filesystem
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
 # Git
 alias gs="git status"
 alias gb="git branch"
@@ -21,5 +30,15 @@ alias wip="commit wip"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
 
 # tmux
-alias ta="tmux attach -t"
+alias ta="tmux attach"
+alias tat="tmux attach -t"
 alias td="tmux detach"
+alias tls="tmux ls"
+alias tns="tmux new-session -s"
+
+# Pipe my public key to my clipboard.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo \"=> Public key copied to pasteboard.\""
+
+# Docker
+alias d="docker $*"
+alias dc="docker-compose $*"
