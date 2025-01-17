@@ -201,6 +201,10 @@ run = 'move-node-to-workspace C'
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace D'
 
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.PhpStorm'
+run = 'move-node-to-workspace D'
+
 ## Browsers
 
 [[on-window-detected]]
@@ -217,6 +221,10 @@ run = 'move-node-to-workspace B'
 if.app-id = 'com.DanPristupov.Fork'
 run = 'move-node-to-workspace P'
 
+[[on-window-detected]]
+if.app-id = 'me.tdinh.devutils-setapp'
+run = 'move-node-to-workspace P'
+
 # Note
 
 [[on-window-detected]]
@@ -230,13 +238,5 @@ run = 'move-node-to-workspace N'
 ## Floaters
 
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.FaceTime'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.macpaw.CleanMyMac-setapp'
+check-further-callbacks = true
 run = 'layout floating'
