@@ -233,6 +233,20 @@ run = 'move-node-to-workspace P'
 if.app-id = 'me.tdinh.devutils-setapp'
 run = 'move-node-to-workspace P'
 
+[[on-window-detected]]
+if.app-id = 'com.bitwarden.desktop'
+run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
+if.app-id = 'io.raindrop.macapp'
+run = 'move-node-to-workspace P'
+
+## English
+
+[[on-window-detected]]
+if.app-id = 'net.ankiweb.dtop'
+run = 'move-node-to-workspace E'
+
 # Note
 
 [[on-window-detected]]
