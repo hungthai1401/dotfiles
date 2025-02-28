@@ -42,3 +42,8 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo \"=> Public key copied to p
 # Docker
 alias d="docker $*"
 alias dc="docker-compose $*"
+
+# Public IP
+# https://laravel-news.com/get-a-servers-public-ip-address-with-php
+alias ip='dig @resolver4.opendns.com myip.opendns.com +short'
+alias ip6='dig @resolver1.opendns.com AAAA myip.opendns.com +short -6'
