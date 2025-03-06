@@ -257,6 +257,10 @@ run = 'move-node-to-workspace N'
 if.app-id = 'com.apple.iBooksX'
 run = 'move-node-to-workspace N'
 
+[[on-window-detected]]
+if.app-id = 'ai.perplexity.mac'
+run = 'move-node-to-workspace N'
+
 ## Floaters
 
 [[on-window-detected]]
