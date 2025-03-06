@@ -32,3 +32,6 @@ cask "bruno"
 cask "bitwarden"
 cask "fork"
 cask "nikitabobko/tap/aerospace"
+
+# Mac App Store
+mas "Perplexity", id: 6714467650
