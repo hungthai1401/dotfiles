@@ -207,6 +207,10 @@ run = 'move-node-to-workspace D'
 if.app-id = 'com.jetbrains.PhpStorm'
 run = 'move-node-to-workspace D'
 
+[[on-window-detected]]
+if.app-name-regex-substring = 'Cursor'
+run = 'move-node-to-workspace D'
+
 ## Terminal
 
 [[on-window-detected]]
