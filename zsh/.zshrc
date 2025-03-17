@@ -111,4 +111,6 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
+source $(brew --prefix nvm)/nvm.sh
+
 zvm_after_init_commands+=('[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh')

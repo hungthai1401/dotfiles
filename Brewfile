@@ -22,6 +22,7 @@ brew "shivammathur/extensions/xdebug@8.1"
 brew "tmux"
 brew "brotherbui/homebrew/sapp"
 brew "composer"
+brew "nvm"
 
 # Apps
 cask "another-redis-desktop-manager"
