@@ -229,6 +229,10 @@ run = 'move-node-to-workspace P'
 if.app-id = 'io.raindrop.macapp'
 run = 'move-node-to-workspace P'
 
+[[on-window-detected]]
+if.app-name-regex-substring = 'TablePlus'
+run = 'move-node-to-workspace P'
+
 ## English
 
 [[on-window-detected]]
