@@ -115,4 +115,9 @@ if [ -d "$(brew --prefix nvm)" ]; then
     source $(brew --prefix nvm)/nvm.sh
 fi
 
+# Add ~/.config/phpmon/bin to PATH if it exists
+if [ -d "$HOME/.config/phpmon/bin" ]; then
+    export PATH=$HOME/bin:$HOME/.config/phpmon/bin:$PATH
+fi
+
 zvm_after_init_commands+=('[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh')
