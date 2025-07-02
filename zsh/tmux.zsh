@@ -6,12 +6,9 @@ WORKING_WORKSPACE_NAME="working"
 if [[ -n $PS1 ]]; then
     if [[ -z $TMUX ]]; then
         if [[ -n $WORKING_WORKSPACE_NAME ]]; then
-            tmux new -A -t "$WORKING_WORKSPACE_NAME"
-            tmux attach-session -t "$WORKING_WORKSPACE_NAME"
-            return
+            tmux new -A -s "$WORKING_WORKSPACE_NAME"
         else
-            tmux new -A -t default
-            return
+            tmux new -A -s default
         fi
     fi
 fi
