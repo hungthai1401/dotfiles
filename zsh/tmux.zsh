@@ -6,9 +6,9 @@ WORKING_WORKSPACE_NAME="working"
 if [[ -n $PS1 ]]; then
     if [[ -z $TMUX ]]; then
         if [[ -n $WORKING_WORKSPACE_NAME ]]; then
-            tmux new -A -s "$WORKING_WORKSPACE_NAME"
+            tmux new -A -s "$WORKING_WORKSPACE_NAME" \; run-shell '~/.tmux/plugins/tmux-resurrect/scripts/restore.sh'
         else
-            tmux new -A -s default
+            tmux new -A -s default \; run-shell '~/.tmux/plugins/tmux-resurrect/scripts/restore.sh'
         fi
     fi
 fi
