@@ -46,8 +46,10 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
-# Force link PHP 8.1
-brew link --overwrite --force shivammathur/php/php@8.1
+# Install helper script for switching between Brew-installed PHP versions
+# See: https://github.com/rhukster/sphp.sh
+curl -L https://raw.githubusercontent.com/rhukster/sphp.sh/main/sphp.sh > /usr/local/bin/sphp
+chmod +x /usr/local/bin/sphp
 
 # Set up fzf key bindings and fuzzy completion
 $(brew --prefix)/opt/fzf/install
