@@ -42,6 +42,7 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo \"=> Public key copied to p
 # Docker
 alias d="docker $*"
 alias dc="docker-compose $*"
+alias lzd="lazydocker"
 
 # Public IP
 # https://laravel-news.com/get-a-servers-public-ip-address-with-php

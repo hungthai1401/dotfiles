@@ -16,6 +16,7 @@ brew "mackup"
 brew "tmux"
 brew "composer"
 brew "nvm"
+brew "lazydocker"
 
 # Zsh
 brew "z"
