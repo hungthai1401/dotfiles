@@ -1,4 +1,4 @@
-WORKING_WORKSPACE_NAME="working"
+WORKING_WORKSPACE_NAME="0_working"
 
 # If the shell is interactive and not in a tmux session, and the WORKING_WORKSPACE_NAME is set,
 # then create a new tmux session with the WORKING_WORKSPACE_NAME.
