@@ -121,3 +121,4 @@ if [ -d "$HOME/.config/phpmon/bin" ]; then
 fi
 
 zvm_after_init_commands+=('[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh')
+export PATH="$HOME/.local/bin:$PATH"
