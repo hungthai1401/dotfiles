@@ -17,6 +17,7 @@ brew "tmux"
 brew "composer"
 brew "nvm"
 brew "lazydocker"
+brew "lazygit"
 brew "uv"
 
 # Zsh

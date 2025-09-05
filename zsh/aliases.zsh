@@ -8,6 +8,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Git
+alias lzg="lazygit"
 alias gs="git status"
 alias gb="git branch"
 alias gc="git checkout"
