@@ -58,6 +58,9 @@ $(brew --prefix)/opt/fzf/install
 # See: https://github.com/go-delve/delve
 go install github.com/go-delve/delve/cmd/dlv@latest
 
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # Removes .tmux.conf from $HOME (if it exists) and symlinks the .tmux.conf file from the .dotfiles
 rm -rf $HOME/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
