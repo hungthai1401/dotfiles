@@ -33,6 +33,7 @@ ln -s $(pwd)/zsh/dracula.zsh-theme $ZSH/themes
 ln -s $(pwd)/zsh/aliases.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/aliases.zsh
 ln -s $(pwd)/zsh/path.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/path.zsh
 ln -s $(pwd)/zsh/tmux.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/tmux.zsh
+ln -s $(pwd)/zsh/utils.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/utils.zsh
 
 # Install Oh My Zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/$ZSH/custom}/plugins/zsh-autosuggestions
