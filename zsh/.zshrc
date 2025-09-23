@@ -54,7 +54,7 @@ plugins=(
     zsh-autosuggestions
     z
     fzf
-    zsh-vi-mode
+    vi-mode
     artisan
 )
 
