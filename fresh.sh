@@ -37,7 +37,6 @@ ln -s $(pwd)/zsh/utils.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/utils.zsh
 
 # Install Oh My Zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/$ZSH/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/jeffreytse/zsh-vi-mode ${ZSH_CUSTOM:-~/$ZSH/custom}/plugins/zsh-vi-mode
 git clone https://github.com/jessarcher/zsh-artisan.git ${ZSH_CUSTOM:-~/$ZSH/custom}/plugins/artisan
 
 # Update Homebrew recipes
