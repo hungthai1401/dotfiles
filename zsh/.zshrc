@@ -111,6 +111,10 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
+# See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
+
 if [ -d "$(brew --prefix nvm)" ]; then
     source $(brew --prefix nvm)/nvm.sh
 fi
