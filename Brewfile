@@ -19,6 +19,8 @@ brew "nvm"
 brew "lazydocker"
 brew "lazygit"
 brew "uv"
+brew "the_silver_searcher"
+brew "bat"
 
 # Zsh
 brew "z"
