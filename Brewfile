@@ -21,6 +21,7 @@ brew "lazygit"
 brew "uv"
 brew "the_silver_searcher"
 brew "bat"
+brew "neovim"
 
 # Zsh
 brew "z"
@@ -41,6 +42,9 @@ cask "iterm2"
 cask "itsycal"
 cask "nikitabobko/tap/aerospace"
 cask "phpmon"
+
+# Font
+cask "font-jetbrains-mono-nerd-font"
 
 # Mac App Store
 mas "Perplexity", id: 6714467650

@@ -49,3 +49,7 @@ alias lzd="lazydocker"
 # https://laravel-news.com/get-a-servers-public-ip-address-with-php
 alias ip='dig @resolver4.opendns.com myip.opendns.com +short'
 alias ip6='dig @resolver1.opendns.com AAAA myip.opendns.com +short -6'
+
+# Neovim
+alias vi='nvim'
+alias vim='nvim'
