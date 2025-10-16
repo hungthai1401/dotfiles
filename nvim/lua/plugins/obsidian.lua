@@ -18,6 +18,10 @@ return {
         name = "personal-mac-mini",
         path = "$HOME/Documents/2-Areas/Self/knowledge-vault/",
       },
+      {
+        name = "personal-omarchy",
+        path = "~/knowledge-vault/",
+      }
     },
     daily_notes = {
       folder = "4 - Journal/Daily",
