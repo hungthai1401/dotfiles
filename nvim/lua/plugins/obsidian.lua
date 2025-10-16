@@ -1,3 +1,24 @@
+local function dir_exists(path)
+  local f = io.popen('[ -d "' .. path .. '" ] && echo "yes"')
+  local result = f:read("*l")
+  f:close()
+  return result == "yes"
+end
+
+local workspaces = {}
+if dir_exists("/Users/khunglong/Documents/2-Areas/Self/knowledge-vault/") then
+  table.insert(workspaces, {
+    name = "personal-mac-mini",
+    path = "/Users/khunglong/Documents/2-Areas/Self/knowledge-vault/",
+  })
+end
+if dir_exists("~/knowledge-vault/") then
+  table.insert(workspaces, {
+    name = "personal-omarchy",
+    path = "~/knowledge-vault/",
+  })
+end
+
 return {
   "obsidian-nvim/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
@@ -12,17 +33,9 @@ return {
   -- },
   ---@module 'obsidian'
   ---@type obsidian.config
+  -- see below for full list of options 👇
   opts = {
-    workspaces = {
-      {
-        name = "personal-mac-mini",
-        path = "$HOME/Documents/2-Areas/Self/knowledge-vault/",
-      },
-      {
-        name = "personal-omarchy",
-        path = "~/knowledge-vault/",
-      }
-    },
+    workspaces = workspaces,
     daily_notes = {
       folder = "4 - Journal/Daily",
       date_format = "%Y%m%d",
@@ -33,6 +46,5 @@ return {
       date_format = "%Y%m%d",
       time_format = "%H:%M",
     },
-    -- see below for full list of options 👇
   },
 }

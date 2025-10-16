@@ -21,12 +21,6 @@ else
   ln -s $(pwd)/init.lua $HOME/.config/nvim/init.lua
 fi
 
-if [ -f "$HOME/.config/nvim/lazy-lock.json" ]; then
-  echo "Neovim lazy-lock.json already exists."
-else
-  ln -s $(pwd)/lazy-lock.json $HOME/.config/nvim/lazy-lock.json
-fi
-
 if [ -d "$HOME/.config/nvim/lua" ]; then
   echo "Neovim lua directory already exists."
 else
