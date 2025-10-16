@@ -12,10 +12,10 @@ if dir_exists("/Users/khunglong/Documents/2-Areas/Self/knowledge-vault/") then
     path = "/Users/khunglong/Documents/2-Areas/Self/knowledge-vault/",
   })
 end
-if dir_exists("~/knowledge-vault/") then
+if dir_exists("~/Documents/knowledge-vault/") then
   table.insert(workspaces, {
     name = "personal-omarchy",
-    path = "~/knowledge-vault/",
+    path = "~/Documents/knowledge-vault/",
   })
 end
 
