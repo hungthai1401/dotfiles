@@ -6,6 +6,14 @@ if test ! $(which nvim); then
   exit 1
 fi
 
+echo "Checking for Neovim configuration directory..."
+if [ -d "$HOME/.config/nvim" ]; then
+  echo "Neovim configuration directory already exists."
+else
+  echo "Creating Neovim configuration directory..."
+  mkdir -p $HOME/.config/nvim
+fi
+
 echo "Setting up Neovim configuration..."
 if [ -f "$HOME/.config/nvim/init.lua" ]; then
   echo "Neovim configuration already exists."

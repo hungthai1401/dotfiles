@@ -22,6 +22,7 @@ brew "uv"
 brew "the_silver_searcher"
 brew "bat"
 brew "neovim"
+brew "ripgrep"
 
 # Zsh
 brew "z"

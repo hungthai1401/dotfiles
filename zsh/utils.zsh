@@ -13,14 +13,14 @@ kp() {
     # Convert to array to handle multiple PIDs properly
     local pids_array=($process_ids)
     local count=${#pids_array[@]}
-    
+
     if [[ $count -eq 1 ]]; then
       echo "Killing process $process_ids using port $port"
     else
       echo "Found $count processes using port $port: $process_ids"
       echo "Killing all processes..."
     fi
-    
+
     # Kill each process individually to handle errors better
     local failed_kills=()
     for pid in $pids_array; do
@@ -31,7 +31,7 @@ kp() {
         echo "  ✗ Failed to kill process $pid"
       fi
     done
-    
+
     if [[ ${#failed_kills[@]} -eq 0 ]]; then
       echo "All processes terminated successfully"
     else
@@ -52,7 +52,7 @@ zoc() {
 
   # Use z to jump to directory
   z "$1"
-  
+
   # Check if z command was successful (directory exists and was changed to)
   if [[ $? -eq 0 ]]; then
     # Check if opencode is installed
@@ -78,7 +78,7 @@ zcc() {
 
   # Use z to jump to directory
   z "$1"
-  
+
   # Check if z command was successful (directory exists and was changed to)
   if [[ $? -eq 0 ]]; then
     # Check if claude is installed
@@ -88,6 +88,25 @@ zcc() {
     else
       echo "Neither claude nor code command is available"
       return 1
+    fi
+  else
+    echo "Directory not found or z command failed"
+    return 1
+  fi
+}
+
+znv() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: zvi <directory_pattern>"
+    return 1
+  fi
+
+  z "$1"
+  if [[ $? -eq 0 ]]; then
+    if command -v nvim &> /dev/null; then
+      nvim
+    else
+      vim
     fi
   else
     echo "Directory not found or z command failed"
