@@ -24,6 +24,10 @@ brew "bat"
 brew "neovim"
 brew "ripgrep"
 
+# Kubernetes
+brew "kubectl"
+brew "kubectx"
+
 # Zsh
 brew "z"
 brew "zsh"
