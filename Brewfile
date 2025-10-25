@@ -10,23 +10,27 @@ tap "brotherbui/homebrew"
 
 # Binaries
 brew "fzf"
-brew "go"
 brew "mas" # Mac App Store manager
 brew "mackup"
 brew "tmux"
-brew "composer"
-brew "nvm"
 brew "lazydocker"
 brew "lazygit"
-brew "uv"
 brew "the_silver_searcher"
 brew "bat"
 brew "neovim"
 brew "ripgrep"
 
+# Go
+brew "go"
+
+# Nodejs
+brew "nvm"
+brew "yarn"
+
 # Kubernetes
 brew "kubectl"
 brew "kubectx"
+brew "derailed/k9s/k9s"
 
 # Zsh
 brew "z"
@@ -35,8 +39,12 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 
 # PHP
+brew "composer"
 brew "shivammathur/php/php@8.1"
 brew "shivammathur/extensions/xdebug@8.1"
+
+# Python
+brew "uv"
 
 # Apps
 cask "another-redis-desktop-manager"
