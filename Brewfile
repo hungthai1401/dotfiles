@@ -47,7 +47,7 @@ brew "shivammathur/extensions/xdebug@8.1"
 brew "uv"
 
 # Apps
-cask "another-redis-desktop-manager"
+#cask "another-redis-desktop-manager"
 cask "bitwarden"
 cask "bruno"
 cask "fork"
@@ -55,6 +55,7 @@ cask "iterm2"
 cask "itsycal"
 cask "nikitabobko/tap/aerospace"
 cask "phpmon"
+cask "stats"
 
 # Font
 cask "font-jetbrains-mono-nerd-font"
