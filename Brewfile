@@ -6,7 +6,9 @@ tap "nicoverbruggen/cask"
 tap "nicoverbruggen/homebrew-cask"
 tap "shivammathur/extensions"
 tap "shivammathur/php"
-tap "brotherbui/homebrew"
+tap "sst/tap"
+tap "tw93/tap"
+tap "hungthai1401/tap"
 
 # Binaries
 brew "fzf"
@@ -19,6 +21,7 @@ brew "the_silver_searcher"
 brew "bat"
 brew "neovim"
 brew "ripgrep"
+brew "tw93/tap/mole"
 
 # Go
 brew "go"
@@ -42,6 +45,10 @@ brew "zsh-syntax-highlighting"
 brew "composer"
 brew "shivammathur/php/php@8.1"
 brew "shivammathur/extensions/xdebug@8.1"
+
+# Coding tools
+brew "sst/tap/opencode"
+brew "hungthai1401/tap/occtx"
 
 # Python
 brew "uv"
