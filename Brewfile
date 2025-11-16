@@ -32,7 +32,6 @@ brew "yarn"
 
 # Kubernetes
 brew "kubectl"
-brew "kubectx"
 brew "derailed/k9s/k9s"
 
 # Zsh
