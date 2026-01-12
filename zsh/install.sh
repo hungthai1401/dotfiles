@@ -22,6 +22,7 @@ ln -s $(pwd)/path.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/path.zsh
 ln -s $(pwd)/tmux.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/tmux.zsh
 ln -s $(pwd)/utils.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/utils.zsh
 ln -s $(pwd)/fzf.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/fzf.zsh
+ln -s $(pwd)/go.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/go.zsh
 
 echo "Installing Oh My Zsh plugins..."
 

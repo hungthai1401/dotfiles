@@ -21,6 +21,7 @@ brew "the_silver_searcher"
 brew "bat"
 brew "neovim"
 brew "ripgrep"
+brew "ast-grep"
 brew "tw93/tap/mole"
 
 # Go
