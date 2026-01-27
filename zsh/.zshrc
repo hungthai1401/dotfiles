@@ -69,7 +69,7 @@ plugins=(
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source ${ZSH_CUSTOM:-~/$ZSH/custom}/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ${ZSH_CUSTOM:-~/$ZSH/custom}/zsh-syntax-highlighting.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

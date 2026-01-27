@@ -23,7 +23,7 @@ ln -s $(pwd)/tmux.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/tmux.zsh
 ln -s $(pwd)/utils.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/utils.zsh
 ln -s $(pwd)/fzf.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/fzf.zsh
 ln -s $(pwd)/go.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/go.zsh
-ln -s $(pwd)/catppuccin_mocha-zsh-syntax-highlighting.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/catppuccin_mocha-zsh-syntax-highlighting.zsh
+ln -s $(pwd)/zsh-syntax-highlighting.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/zsh-syntax-highlighting.zsh
 
 echo "Installing Oh My Zsh plugins..."
 
