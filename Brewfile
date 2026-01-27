@@ -63,6 +63,7 @@ cask "itsycal"
 cask "nikitabobko/tap/aerospace"
 cask "phpmon"
 cask "stats"
+cask "ghostty"
 
 # Font
 cask "font-jetbrains-mono-nerd-font"
