@@ -23,6 +23,7 @@ brew "neovim"
 brew "ripgrep"
 brew "ast-grep"
 brew "tw93/tap/mole"
+brew "gh"
 
 # Go
 brew "go"
