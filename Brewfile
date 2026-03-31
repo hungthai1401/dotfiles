@@ -24,6 +24,7 @@ brew "ripgrep"
 brew "ast-grep"
 brew "tw93/tap/mole"
 brew "gh"
+brew "yaml-language-server"
 
 # Go
 brew "go"
@@ -58,8 +59,8 @@ brew "uv"
 #cask "another-redis-desktop-manager"
 cask "bitwarden"
 cask "bruno"
-cask "fork"
-cask "iterm2"
+#cask "fork"
+#cask "iterm2"
 cask "itsycal"
 cask "nikitabobko/tap/aerospace"
 cask "phpmon"
@@ -70,4 +71,4 @@ cask "ghostty"
 cask "font-jetbrains-mono-nerd-font"
 
 # Mac App Store
-mas "Perplexity", id: 6714467650
+#mas "Perplexity", id: 6714467650
