@@ -25,6 +25,7 @@ brew "ast-grep"
 brew "tw93/tap/mole"
 brew "gh"
 brew "yaml-language-server"
+brew "fd"
 
 # Go
 brew "go"
