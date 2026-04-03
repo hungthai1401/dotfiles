@@ -1,3 +1,5 @@
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
 echo "Setting up Neovim..."
 
 # Check for Neovim and install if we don't have it
@@ -18,13 +20,13 @@ echo "Setting up Neovim configuration..."
 if [ -f "$HOME/.config/nvim/init.lua" ]; then
   echo "Neovim configuration already exists."
 else
-  ln -s $(pwd)/init.lua $HOME/.config/nvim/init.lua
+  ln -s $SCRIPT_DIR/init.lua $HOME/.config/nvim/init.lua
 fi
 
 if [ -d "$HOME/.config/nvim/lua" ]; then
   echo "Neovim lua directory already exists."
 else
-  ln -s $(pwd)/lua $HOME/.config/nvim/lua
+  ln -s $SCRIPT_DIR/lua $HOME/.config/nvim/lua
 fi
 
 echo "Neovim configuration complete!"

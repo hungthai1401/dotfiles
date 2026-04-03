@@ -11,19 +11,21 @@ else
   echo "Oh My Zsh already installed."
 fi
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
 echo "Setting up Zsh configuration..."
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
-ln -s $(pwd)/.zshrc $HOME/.zshrc
-ln -s $(pwd)/dracula.zsh-theme $ZSH/themes
-ln -s $(pwd)/aliases.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/aliases.zsh
-ln -s $(pwd)/path.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/path.zsh
-ln -s $(pwd)/tmux.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/tmux.zsh
-ln -s $(pwd)/utils.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/utils.zsh
-ln -s $(pwd)/fzf.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/fzf.zsh
-ln -s $(pwd)/go.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/go.zsh
-ln -s $(pwd)/zsh-syntax-highlighting.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/zsh-syntax-highlighting.zsh
+ln -s $SCRIPT_DIR/.zshrc $HOME/.zshrc
+ln -s $SCRIPT_DIR/dracula.zsh-theme $ZSH/themes
+ln -s $SCRIPT_DIR/aliases.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/aliases.zsh
+ln -s $SCRIPT_DIR/path.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/path.zsh
+ln -s $SCRIPT_DIR/tmux.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/tmux.zsh
+ln -s $SCRIPT_DIR/utils.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/utils.zsh
+ln -s $SCRIPT_DIR/fzf.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/fzf.zsh
+ln -s $SCRIPT_DIR/go.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/go.zsh
+ln -s $SCRIPT_DIR/zsh-syntax-highlighting.zsh ${ZSH_CUSTOM:-~/$ZSH/custom}/zsh-syntax-highlighting.zsh
 
 echo "Installing Oh My Zsh plugins..."
 

@@ -39,3 +39,4 @@ vendor
 rr
 .rr.yaml
 protoc-gen-php-grpc
+**/.claude/settings.local.json
