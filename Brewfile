@@ -26,6 +26,7 @@ brew "tw93/tap/mole"
 brew "gh"
 brew "yaml-language-server"
 brew "fd"
+brew "rtk" # https://github.com/rtk-ai/rtk
 
 # Go
 brew "go"
