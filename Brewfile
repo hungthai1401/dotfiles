@@ -12,7 +12,7 @@ tap "hungthai1401/tap"
 
 # Binaries
 brew "fzf"
-brew "mas" # Mac App Store manager
+#brew "mas" # Mac App Store manager
 brew "mackup"
 brew "tmux"
 brew "lazydocker"
@@ -68,6 +68,7 @@ cask "nikitabobko/tap/aerospace"
 cask "phpmon"
 cask "stats"
 cask "ghostty"
+cask "dockdoor"
 
 # Font
 cask "font-jetbrains-mono-nerd-font"
