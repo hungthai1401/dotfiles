@@ -12,11 +12,11 @@ fi
 
 # Install ultimate_bug_scanner - static analysis catching 1000+ bug patterns across popular languages
 # See: https://github.com/Dicklesworthstone/ultimate_bug_scanner
-if ! command -v ubs > /dev/null 2>&1; then
-  curl -fsSL "https://raw.githubusercontent.com/Dicklesworthstone/ultimate_bug_scanner/main/install.sh?$(date +%s)" | bash -s -- --easy-mode
-else
-  echo "ultimate_bug_scanner already installed."
-fi
+# if ! command -v ubs > /dev/null 2>&1; then
+#   curl -fsSL "https://raw.githubusercontent.com/Dicklesworthstone/ultimate_bug_scanner/main/install.sh?$(date +%s)" | bash -s -- --easy-mode
+# else
+#   echo "ultimate_bug_scanner already installed."
+# fi
 
 # Install beads_rust (br) - local-first Rust CLI issue tracker using SQLite + JSONL, designed for AI agent workflows
 # See: https://github.com/Dicklesworthstone/beads_rust
