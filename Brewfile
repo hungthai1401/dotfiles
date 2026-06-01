@@ -12,7 +12,7 @@ tap "hungthai1401/tap"
 
 # Binaries
 brew "fzf"
-brew "mas" # Mac App Store manager
+#brew "mas" # Mac App Store manager
 brew "mackup"
 brew "tmux"
 brew "lazydocker"
@@ -46,13 +46,13 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 
 # PHP
-brew "composer"
-brew "shivammathur/php/php@8.1"
-brew "shivammathur/extensions/xdebug@8.1"
+#brew "composer"
+#brew "shivammathur/php/php@8.1"
+#brew "shivammathur/extensions/xdebug@8.1"
 
 # Coding tools
 brew "sst/tap/opencode"
-brew "hungthai1401/tap/occtx"
+#brew "hungthai1401/tap/occtx"
 
 # Python
 brew "uv"
@@ -65,9 +65,10 @@ cask "bruno"
 #cask "iterm2"
 cask "itsycal"
 cask "nikitabobko/tap/aerospace"
-cask "phpmon"
+#cask "phpmon"
 cask "stats"
 cask "ghostty"
+#cask "dockdoor"
 
 # Font
 cask "font-jetbrains-mono-nerd-font"
