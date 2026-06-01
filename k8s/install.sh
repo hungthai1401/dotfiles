@@ -2,7 +2,14 @@
 
 echo "Setting up kctx..."
 
-curl -L https://raw.githubusercontent.com/hungthai1401/kctx/main/kctx > /usr/local/bin/kctx
-chmod +x /usr/local/bin/kctx
+# Create /usr/local/bin if it doesn't exist
+mkdir -p /usr/local/bin
 
-echo "kctx setup complete!"
+# Download kctx
+if curl -L https://raw.githubusercontent.com/hungthai1401/kctx/main/kctx -o /usr/local/bin/kctx; then
+  chmod +x /usr/local/bin/kctx
+  echo "kctx setup complete!"
+else
+  echo "Failed to download kctx"
+  exit 1
+fi
