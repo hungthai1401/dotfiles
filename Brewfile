@@ -9,6 +9,7 @@ tap "shivammathur/php"
 tap "sst/tap"
 tap "tw93/tap"
 tap "hungthai1401/tap"
+tap "kunkka19xx/tap"
 
 # Binaries
 brew "fzf"
@@ -72,6 +73,10 @@ cask "stats"
 cask "ghostty"
 cask "visual-studio-code"
 #cask "dockdoor"
+cast "xkey"
+cast "obsidian"
+cask "look"
+cask "breaktimer"
 
 # Font
 cask "font-jetbrains-mono-nerd-font"
