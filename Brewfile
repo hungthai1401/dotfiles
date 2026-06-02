@@ -28,6 +28,7 @@ brew "gh"
 brew "yaml-language-server"
 brew "fd"
 brew "rtk" # https://github.com/rtk-ai/rtk
+brew "openfortivpn"
 
 # Go
 brew "go"
@@ -77,6 +78,9 @@ cast "xkey"
 cast "obsidian"
 cask "look"
 cask "breaktimer"
+
+cast "slack"
+cask "discord"
 
 # Font
 cask "font-jetbrains-mono-nerd-font"
