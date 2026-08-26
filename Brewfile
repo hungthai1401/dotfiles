@@ -16,7 +16,7 @@ brew "fzf"
 #brew "mas" # Mac App Store manager
 brew "mackup"
 brew "tmux"
-brew "lazydocker"
+brew "lazydocker", trusted: true
 brew "lazygit"
 brew "the_silver_searcher"
 brew "bat"
@@ -83,6 +83,7 @@ cask "breaktimer"
 
 cast "slack"
 cask "discord"
+cask "jordanbaird-ice"
 
 # Font
 cask "font-jetbrains-mono-nerd-font"
