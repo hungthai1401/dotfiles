@@ -25,6 +25,8 @@ brew "ripgrep"
 brew "ast-grep"
 brew "tw93/tap/mole"
 brew "gh"
+brew "transcrypt" # encrypts secrets in backup/ (backup/scripts/crypt)
+brew "gitleaks" # pre-commit secret scan in backup/
 brew "yaml-language-server"
 brew "fd"
 brew "rtk" # https://github.com/rtk-ai/rtk
