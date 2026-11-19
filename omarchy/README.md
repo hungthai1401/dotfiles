@@ -4,7 +4,7 @@
 
 | Step | What it does |
 | --- | --- |
-| `packages` | pacman: zsh, the_silver_searcher, tinyxxd, glab, gitleaks, pass, kubectl, helm, ibus. AUR: vikey, datagrip, datagrip-jre |
+| `packages` | pacman: zsh, the_silver_searcher, tinyxxd, glab, gitleaks, pass, kubectl, helm, ibus, plus dev CLIs (yq, gh, k9s, delta, shellcheck, httpie...; the full list is in `setup.sh`). AUR: vikey, datagrip, datagrip-jre |
 | `tools` | transcrypt 2.3.2 (sha256 pinned) and dcg into `~/.local/bin` |
 | `tailscale` | Omarchy's own installer, which asks you to log in |
 | `ibus` | IBus with Vikey instead of Fcitx5: env files, `ibus-daemon.service` (panel icon in the Omarchy bar), Fcitx5 masked |

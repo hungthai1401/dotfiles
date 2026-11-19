@@ -70,6 +70,11 @@ clone_once() { [ -d "$2" ] || git clone --depth 1 "$1" "$2"; }
 step_packages() {
 	say 'Packages'
 	sudo pacman -S --needed --noconfirm zsh the_silver_searcher tinyxxd glab gitleaks pass kubectl helm ibus
+	# Dev CLIs on top of what Omarchy ships (jq, fzf, ripgrep, fd, bat, eza, lazygit...).
+	sudo pacman -S --needed --noconfirm go-yq github-cli lazydocker ast-grep go yarn k9s uv \
+		yaml-language-server openfortivpn git-delta shellcheck shfmt httpie jless sd direnv \
+		entr watchexec hyperfine wget lsof strace bind mtr traceroute ncdu duf \
+		kubectx stern
 	yay -S --needed --noconfirm --answerdiff None --answerclean None vikey datagrip datagrip-jre
 }
 
