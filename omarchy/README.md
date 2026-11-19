@@ -53,6 +53,7 @@ On Hyprland, IBus reaches GTK and Qt apps through their IM modules and X11 apps 
 
 - Java apps on the Wayland toolkit. DataGrip runs with `-Dawt.toolkit.name=XToolkit` so it goes through XIM.
 - Chromium on Wayland, even with `--gtk-version=4`. It runs under XWayland instead.
+- Chromium under XWayland is drawn at `GDK_SCALE`. Omarchy sets it to 2 in `~/.config/hypr/monitors.lua`; on a scale-1 monitor set `omarchy_gdk_scale = 1` there, or Chromium and other XWayland apps come out twice as big.
 - Paseo, an Electron app. It has no working path yet: it exits on Chromium switches it doesn't know, and under XWayland (forced through the environment) it takes no keyboard input at all. It stays on Wayland, without Vietnamese input.
 
 Fcitx5, Omarchy's default, does implement the Wayland protocol. To go back to it, see the comment in `config/environment.d/95-ibus.conf`.
