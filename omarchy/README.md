@@ -13,7 +13,6 @@
 | `docker` | adds you to the docker group |
 | `datagrip` | restores DataGrip settings and `~/DataGripProjects` from the backup repo, runs it under XWayland, sets the VSCode keymap |
 | `chromium` | runs Chromium under XWayland (`--ozone-platform=x11`) |
-| `paseo` | runs the Paseo AppImage under XWayland, through its desktop entry |
 | `fonts` | font size 11 in alacritty, foot, ghostty and kitty |
 | `bar` | `config/omarchy/shell.json` |
 | `nouveau` | software cursor, only when the nouveau driver is loaded |
@@ -54,6 +53,6 @@ On Hyprland, IBus reaches GTK and Qt apps through their IM modules and X11 apps 
 
 - Java apps on the Wayland toolkit. DataGrip runs with `-Dawt.toolkit.name=XToolkit` so it goes through XIM.
 - Chromium on Wayland, even with `--gtk-version=4`. It runs under XWayland instead.
-- Paseo, an Electron app. It exits on Chromium switches it doesn't know, so its desktop entry unsets `WAYLAND_DISPLAY` and sets `XDG_SESSION_TYPE=x11`. The Paseo daemon and its agents inherit that environment, so Wayland tools such as `wl-copy` fail inside them.
+- Paseo, an Electron app. It has no working path yet: it exits on Chromium switches it doesn't know, and under XWayland (forced through the environment) it takes no keyboard input at all. It stays on Wayland, without Vietnamese input.
 
 Fcitx5, Omarchy's default, does implement the Wayland protocol. To go back to it, see the comment in `config/environment.d/95-ibus.conf`.

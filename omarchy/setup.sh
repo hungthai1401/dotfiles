@@ -5,8 +5,8 @@
 #   omarchy/setup.sh               all steps, in order
 #   omarchy/setup.sh ibus fonts    only these steps
 #
-# Steps: packages tools tailscale ibus shell ufw docker datagrip chromium paseo
-#        fonts bar nouveau
+# Steps: packages tools tailscale ibus shell ufw docker datagrip chromium fonts
+#        bar nouveau
 #
 # Named setup.sh, not install.sh, so the macOS fresh.sh (which runs every
 # */install.sh) leaves it alone. Files this replaces in ~ go to the Trash.
@@ -182,20 +182,6 @@ step_chromium() {
 		-e '/^--gtk-version=4$/d' "$HOME/.config/chromium-flags.conf"
 }
 
-step_paseo() {
-	say 'Paseo under XWayland'
-	local f="$HOME/.local/share/applications/paseo.desktop"
-	if [ ! -f "$f" ]; then
-		echo "No $f yet; install the Paseo AppImage first; skipping." >&2
-		return 0
-	fi
-	# Paseo exits on Chromium switches it does not know, so Electron is pointed
-	# at X11 through the environment. The daemon and the agents it starts inherit
-	# it too, so they run without WAYLAND_DISPLAY (wl-copy fails there).
-	grep -q '^Exec=env -u WAYLAND_DISPLAY ' "$f" ||
-		sed -i 's#^Exec=#Exec=env -u WAYLAND_DISPLAY XDG_SESSION_TYPE=x11 #' "$f"
-}
-
 step_fonts() {
 	say "Terminal font size $font_size"
 	sed -i -E "s/^size = [0-9.]+$/size = $font_size/" "$HOME/.config/alacritty/alacritty.toml"
@@ -230,7 +216,7 @@ hl.config({
 EOF
 }
 
-steps=(packages tools tailscale ibus shell ufw docker datagrip chromium paseo fonts bar nouveau)
+steps=(packages tools tailscale ibus shell ufw docker datagrip chromium fonts bar nouveau)
 [ $# -eq 0 ] || steps=("$@")
 for s in "${steps[@]}"; do
 	declare -F "step_$s" >/dev/null || {
