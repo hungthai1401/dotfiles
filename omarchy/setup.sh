@@ -5,8 +5,8 @@
 #   omarchy/setup.sh               all steps, in order
 #   omarchy/setup.sh ibus fonts    only these steps
 #
-# Steps: packages tools tailscale ibus shell ufw docker datagrip chromium fonts
-#        bar nouveau
+# Steps: packages tools tailscale ibus shell ufw awake docker datagrip chromium
+#        fonts bar nouveau
 #
 # Named setup.sh, not install.sh, so the macOS fresh.sh (which runs every
 # */install.sh) leaves it alone. Files this replaces in ~ go to the Trash.
@@ -147,6 +147,20 @@ step_ufw() {
 	[ -z "$lan" ] || sudo ufw allow from "$lan" to any port 6767 proto tcp comment paseo-lan
 }
 
+step_awake() {
+	say 'No system sleep'
+	# The machine is used remotely (SSH, Paseo over Tailscale), so it must not
+	# sleep. This is the file Omarchy itself writes on GB10 machines, so
+	# omarchy-sleep-disabled sees it too.
+	sudo install -d /etc/systemd/sleep.conf.d
+	printf '[Sleep]\nAllowSuspend=no\nAllowHibernation=no\nAllowSuspendThenHibernate=no\nAllowHybridSleep=no\n' |
+		sudo tee /etc/systemd/sleep.conf.d/omarchy-sleep-disabled.conf >/dev/null
+	printf '[Login]\nHandleSuspendKey=ignore\nHandleSuspendKeyLongPress=ignore\nHandleHibernateKey=ignore\nHandleHibernateKeyLongPress=ignore\nHandleLidSwitch=ignore\nHandleLidSwitchExternalPower=ignore\nHandleLidSwitchDocked=ignore\nIdleAction=ignore\n' |
+		sudo tee /etc/systemd/logind.conf.d/30-stay-awake.conf >/dev/null
+	# SIGHUP reloads logind without ending the sessions a restart would end.
+	sudo systemctl kill -s HUP systemd-logind
+}
+
 step_docker() {
 	say 'Docker without sudo'
 	[[ " $(id -nG) " != *' docker '* ]] || return 0
@@ -221,7 +235,7 @@ hl.config({
 EOF
 }
 
-steps=(packages tools tailscale ibus shell ufw docker datagrip chromium fonts bar nouveau)
+steps=(packages tools tailscale ibus shell ufw awake docker datagrip chromium fonts bar nouveau)
 [ $# -eq 0 ] || steps=("$@")
 for s in "${steps[@]}"; do
 	declare -F "step_$s" >/dev/null || {

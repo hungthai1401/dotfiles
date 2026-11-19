@@ -10,6 +10,7 @@
 | `ibus` | IBus with Vikey instead of Fcitx5: env files, `ibus-daemon.service` (panel icon in the Omarchy bar), Fcitx5 masked |
 | `shell` | Oh My Zsh with its plugins and the Dracula theme; `.zshrc` and `.zprofile` from the backup repo; login shell set to zsh |
 | `ufw` | Tailscale's 41641/udp; Paseo's 6767/tcp from tailscale0 and from the LAN the machine is on |
+| `awake` | no suspend or hibernate (`/etc/systemd/sleep.conf.d`); logind ignores the sleep keys and the lid |
 | `docker` | adds you to the docker group |
 | `datagrip` | restores DataGrip settings and `~/DataGripProjects` from the backup repo, runs it under XWayland, sets the VSCode keymap |
 | `chromium` | runs Chromium under XWayland (`--ozone-platform=x11`) |
