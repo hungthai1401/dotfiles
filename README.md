@@ -18,6 +18,9 @@ gh repo clone hungthai1401/backup ~/.dotfiles/backup
 ```
 4. Restart your computer to finalize the process
 
+## Setting up Omarchy
+See [omarchy/README.md](omarchy/README.md).
+
 ## Backing up
 ```bash
 mackup backup

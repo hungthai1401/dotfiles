@@ -1,0 +1,8 @@
+# Use IBus (Vikey) instead of Omarchy's default Fcitx5 for every uwsm session.
+# environment.d/95-ibus.conf alone is not enough: uwsm restores the user manager's
+# env snapshot on logout, and the manager outlives logins while SSH sessions exist.
+export INPUT_METHOD=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export SDL_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus

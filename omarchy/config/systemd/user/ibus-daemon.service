@@ -1,0 +1,18 @@
+[Unit]
+Description=IBus input method daemon (Vikey)
+# Same session wiring as Omarchy's omarchy-fcitx5.service: start once uwsm has
+# imported WAYLAND_DISPLAY, stop with the compositor, and stay inert over SSH.
+After=graphical-session.target
+PartOf=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+ConditionPathExists=/usr/bin/ibus-daemon
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.IBus
+ExecStart=/usr/bin/ibus-daemon --replace --xim
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target

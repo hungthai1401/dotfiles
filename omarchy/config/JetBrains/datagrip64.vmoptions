@@ -1,0 +1,3 @@
+# Run under XWayland so IBus (Vikey) reaches DataGrip through XIM.
+# The native Wayland toolkit (WLToolkit) gets no input from IBus on Hyprland.
+-Dawt.toolkit.name=XToolkit
