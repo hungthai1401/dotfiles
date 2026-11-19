@@ -5,8 +5,8 @@
 #   omarchy/setup.sh               all steps, in order
 #   omarchy/setup.sh ibus fonts    only these steps
 #
-# Steps: packages tools tailscale ibus shell ufw docker datagrip chromium fonts
-#        bar nouveau
+# Steps: packages tools tailscale ibus shell ufw docker datagrip chromium paseo
+#        fonts bar nouveau
 #
 # Named setup.sh, not install.sh, so the macOS fresh.sh (which runs every
 # */install.sh) leaves it alone. Files this replaces in ~ go to the Trash.
@@ -175,10 +175,25 @@ step_datagrip() {
 }
 
 step_chromium() {
-	say 'Chromium'
-	# GTK4 is how IBus reaches Chromium on Wayland; IBus has no Wayland IME protocol.
-	grep -qx -- '--gtk-version=4' "$HOME/.config/chromium-flags.conf" ||
-		echo '--gtk-version=4' >>"$HOME/.config/chromium-flags.conf"
+	say 'Chromium under XWayland'
+	# IBus reaches X11 apps through XIM. On Wayland, Chromium with --gtk-version=4
+	# still got no Vikey input on Hyprland.
+	sed -i -E -e 's/^--ozone-platform(-hint)?=wayland$/--ozone-platform\1=x11/' \
+		-e '/^--gtk-version=4$/d' "$HOME/.config/chromium-flags.conf"
+}
+
+step_paseo() {
+	say 'Paseo under XWayland'
+	local f="$HOME/.local/share/applications/paseo.desktop"
+	if [ ! -f "$f" ]; then
+		echo "No $f yet; install the Paseo AppImage first; skipping." >&2
+		return 0
+	fi
+	# Paseo exits on Chromium switches it does not know, so Electron is pointed
+	# at X11 through the environment. The daemon and the agents it starts inherit
+	# it too, so they run without WAYLAND_DISPLAY (wl-copy fails there).
+	grep -q '^Exec=env -u WAYLAND_DISPLAY ' "$f" ||
+		sed -i 's#^Exec=#Exec=env -u WAYLAND_DISPLAY XDG_SESSION_TYPE=x11 #' "$f"
 }
 
 step_fonts() {
@@ -215,7 +230,7 @@ hl.config({
 EOF
 }
 
-steps=(packages tools tailscale ibus shell ufw docker datagrip chromium fonts bar nouveau)
+steps=(packages tools tailscale ibus shell ufw docker datagrip chromium paseo fonts bar nouveau)
 [ $# -eq 0 ] || steps=("$@")
 for s in "${steps[@]}"; do
 	declare -F "step_$s" >/dev/null || {
