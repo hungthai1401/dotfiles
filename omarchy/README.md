@@ -7,7 +7,7 @@
 | `packages` | pacman: zsh, the_silver_searcher, tinyxxd, glab, gitleaks, pass, kubectl, helm, ibus. AUR: vikey, datagrip, datagrip-jre |
 | `tools` | transcrypt 2.3.2 (sha256 pinned) and dcg into `~/.local/bin` |
 | `tailscale` | Omarchy's own installer, which asks you to log in |
-| `ibus` | IBus with Vikey instead of Fcitx5: env files, `ibus-daemon.service`, Fcitx5 masked |
+| `ibus` | IBus with Vikey instead of Fcitx5: env files, `ibus-daemon.service` (panel icon in the Omarchy bar), Fcitx5 masked |
 | `shell` | Oh My Zsh with its plugins and the Dracula theme; `.zshrc` and `.zprofile` from the backup repo; login shell set to zsh |
 | `ufw` | Tailscale's 41641/udp; Paseo's 6767/tcp from tailscale0 and from the LAN the machine is on |
 | `docker` | adds you to the docker group |

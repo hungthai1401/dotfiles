@@ -10,7 +10,9 @@ ConditionPathExists=/usr/bin/ibus-daemon
 [Service]
 Type=dbus
 BusName=org.freedesktop.IBus
-ExecStart=/usr/bin/ibus-daemon --replace --xim
+# The panel only shows a StatusNotifier icon, which the Omarchy bar can
+# display, when it thinks it runs on KDE.
+ExecStart=/usr/bin/ibus-daemon --replace --xim "--panel=/usr/bin/env XDG_CURRENT_DESKTOP=KDE /usr/lib/ibus/ibus-ui-gtk3"
 Restart=on-failure
 RestartSec=2
 
